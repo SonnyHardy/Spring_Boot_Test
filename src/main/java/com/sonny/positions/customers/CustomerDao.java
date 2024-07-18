@@ -15,8 +15,7 @@ public class CustomerDao {
 
     private final JdbcTemplate jdbcTemplate;
     private final static String FIND_ALL = "select * from customers";
-    //private RowMapper<CustomerDTO> customerRowMapper = ((rs, rowNum)
-    //        -> new CustomerDTO(rs.getInt("id"), rs.getString("email")));
+
 
     public List<CustomerDTO> search() {
         return this.jdbcTemplate.query(FIND_ALL, new RowMapper<CustomerDTO>() {
